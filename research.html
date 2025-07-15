@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Jay M. Joshi - Research Publications</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #1abc9c;
+            --light-accent: #e1f5fe;
+            --light-gray: #f8f9fa;
+            --medium-gray: #e9ecef;
+            --dark-gray: #343a40;
+            --text-color: #212529;
+            --white: #ffffff;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f5f7f9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        .main-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 2.5rem 0 0.5rem;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 0;
+        }
+        
+        .profile-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid var(--white);
+            object-fit: cover;
+            margin-bottom: 1rem;
+            background-color: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .profile-pic i {
+            font-size: 80px;
+            color: var(--primary-color);
+            opacity: 0.6;
+        }
+        
+        .profile-name h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .profile-title {
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .nav-menu {
+            background-color: rgba(0, 0, 0, 0.15);
+            padding: 1rem 0;
+            margin-top: 1.5rem;
+        }
+        
+        .nav-menu ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.05rem;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .nav-menu a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-menu a.active {
+            background-color: var(--accent-color);
+            color: var(--white);
+            font-weight: 600;
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            background-color: var(--white);
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--medium-gray);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            background-color: var(--light-accent);
+            padding: 1.2rem 1.5rem;
+            border-radius: 8px;
+            min-width: 200px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            border-bottom: 3px solid var(--accent-color);
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            color: var(--dark-gray);
+            font-weight: 500;
+        }
+        
+        /* Main Content Styles */
+        main {
+            padding: 3rem 0;
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2.5rem;
+            color: var(--primary-color);
+            font-size: 2rem;
+            font-weight: 600;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, var(--accent-color), var(--secondary-color));
+            border-radius: 3px;
+        }
+        
+        .pub-section {
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .pub-section:hover {
+            transform: translateY(-5px);
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .section-header h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            font-weight: 600;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+        }
+            .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 10px 20px;
+      background-color: var(--secondary-color);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+        .section-count {
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        
+        .pub-list {
+            list-style-type: none;
+        }
+        
+        .pub-item {
+            padding: 1.8rem;
+            border-bottom: 1px solid var(--medium-gray);
+            transition: background-color 0.2s, transform 0.2s;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        .pub-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .pub-item:hover {
+            background-color: var(--light-gray);
+            transform: translateX(10px);
+        }
+        
+        .pub-title {
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+        
+        .pub-authors {
+            font-style: italic;
+            margin-bottom: 0.8rem;
+            color: var(--dark-gray);
+        }
+        
+        .pub-journal {
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .pub-details {
+            color: var(--dark-gray);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 0.8rem;
+        }
+        
+        .pub-metrics {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .metric {
+            background-color: var(--light-accent);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            font-weight: 500;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .doi-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--white);
+            text-decoration: none;
+            background-color: var(--secondary-color);
+            padding: 0.5rem 1.2rem;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .doi-link:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .doi-link i {
+            margin-right: 8px;
+        }
+        
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--accent-color);
+            color: var(--white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.5rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+            .scrollTopBtn{
+	font-size: 18px;
+	border: none;
+	outline: none;
+	background-color: var(--secondary-color);
+	color: white;
+	cursor: pointer;
+	padding: 10px 20px;
+	border-radius: 5px;
+	transition: background-color 0.3s ease;
+	}
+    .scrollTopBtn:hover{
+	background-color: var(--accent-color);
+	transform: translateY(-2px);
+	box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+	}
+        /* Footer Styles */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            margin-bottom: 2rem;
+        }
+        
+        .footer-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-contact {
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.8rem;
+            gap: 10px;
+        }
+        
+        .contact-item i {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+ .tab-container {
+            margin-bottom: 2rem;
+        }
+        
+        .tab-buttons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .tab-button {
+            padding: 0.8rem 1.5rem;
+            background-color: #e9ecef;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+            border-radius: 5px;
+        }
+        
+        .tab-button.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        
+        .social-link {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        
+        .social-link:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .nav-menu ul {
+                gap: 1rem;
+            }
+            
+            .nav-menu a {
+                font-size: 0.9rem;
+                padding: 0.4rem 0.8rem;
+            }
+            
+            .pub-section {
+                padding: 2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .stats {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .stat-item {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .nav-menu ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            
+            .section-count {
+                align-self: flex-start;
+            }
+            
+            .pub-item:hover {
+                transform: none;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .profile-name h1 {
+                font-size: 2rem;
+            }
+            
+            .profile-pic {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .pub-section {
+                padding: 1.5rem;
+            }
+            
+            .pub-item {
+                padding: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .section-header h2 {
+                font-size: 1.5rem;
+            }
+        }
+        
+        /* Animation for publications */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .pub-item {
+            animation: fadeInUp 0.5s ease-out forwards;
+            opacity: 0;
+        }
+        
+        .pub-item:nth-child(1) { animation-delay: 0.1s; }
+        .pub-item:nth-child(2) { animation-delay: 0.2s; }
+        .pub-item:nth-child(3) { animation-delay: 0.3s; }
+        .pub-item:nth-child(4) { animation-delay: 0.4s; }
+        .pub-item:nth-child(5) { animation-delay: 0.5s; }
+        .pub-item:nth-child(6) { animation-delay: 0.6s; }
+        .pub-item:nth-child(7) { animation-delay: 0.7s; }
+        .pub-item:nth-child(8) { animation-delay: 0.8s; }
+        .pub-item:nth-child(9) { animation-delay: 0.9s; }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="container">
+            <div class="profile-header">
+               
+                <div class="profile-name">
+                    <h1>Dr. Jay M. Joshi</h1>
+                    <p class="profile-title">Researcher & Academic Professional</p>
+		    
+                </div>
+            </div>
+            
+           
+        </div>
+    </header>
+
+
+    <!-- Stats Section -->
+    <section class="stats-section" id="home">
+        <div class="container">
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">13</div>
+                    <div class="stat-label">International Journals</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">International Conferences</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">National Conferences</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">41</div>
+                    <div class="stat-label">Total Citations</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <main class="container" id="publications">
+        <h1 class="section-title">Research Publications</h1><br>
+       
+        
+        <section class="pub-section">
+	<div class="tab-container">
+	    <div class="tab-buttons">
+                    <button class="tab-button active" onclick="openTab('tab1')">International Journal Publications</button>
+                    <button class="tab-button" onclick="openTab('tab2')">National Conference Publications</button>
+                    <button class="tab-button" onclick="openTab('tab3')">International Conference Publications</button>	
+                </div>
+	
+	<!-- International Journal Publications -->
+	<div id="tab1" class="tab-content active">
+            <div class="section-header">
+                <h2>International Journal Publications</h2>
+                <span class="section-count">13 Publications</span>
+            </div>
+            <ul class="pub-list">
+                <li class="pub-item">
+                    <div class="pub-title">Hardware Implementation of Wavelet Based Speech Encryption for End-to-end Security in Mobile Communication System</div>
+                    <div class="pub-authors">J. M. Joshi and U. D. Dalal</div>
+                    <div class="pub-journal">International Journal of Recent Trends in Engineering and Technology (IJRTET)</div>
+                    <div class="pub-details">Vol. 4, No. 4, Nov 2010 | ISSN (Print): 2158-5555, ISSN (Online): 2158-5563, pp. 59-62</div>
+                    <div class="pub-metrics">
+                        <span class="metric"><i class="fas fa-quote-right"></i> Citations: 1</span>
+                        <span class="metric"><i class="fas fa-user-edit"></i> Self-Citation: 0</span>
+                    </div>
+                    <a href="https://www.academia.edu/67132144/Hardware_Implementation_of_Wavelet_Based_Speech_Encryption_for_End_to_end_Security_in_Mobile_Communication_System" class="doi-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Publication</a>
+                </li>
+                
+                <li class="pub-item">
+                    <div class="pub-title">Design and Implementation of KASUMI Algorithm in ISMACryp Encryption for Video content protection in DVB-H application</div>
+                    <div class="pub-authors">J. M. Joshi, K. R. Parmar and U. D. Dalal</div>
+                    <div class="pub-journal">Advanced Material Research Journal, Trans Tech Publication</div>
+                    <div class="pub-details">Vol 403-408(2012), Nov. 2011 | ISSN 1022-6680, pp. 3847-3853</div>
+                    <div class="pub-metrics">
+                        <span class="metric"><i class="fas fa-quote-right"></i> Citations: 5</span>
+                        <span class="metric"><i class="fas fa-user-edit"></i> Self-Citation: 2</span>
+                    </div>
+                    <a href="http://dx.doi.org/10.4028/www.scientific.net/AMR.403-408.3847" class="doi-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Publication</a>
+                </li>
+                
+                <li class="pub-item">
+                    <div class="pub-title">Selective Encryption using ISMACryp in Real Time Video Streaming of H.264/AVC for DVB-H Application</div>
+                    <div class="pub-authors">J. M. Joshi and U. D. Dalal</div>
+                    <div class="pub-journal">World Academy of Science, Engineering and Technology, International Journal of Electronics and Communication Engineering </div>
+                    <div class="pub-details">Vol:5, No:7, 2011 | ISSN (Print): 2010-376X, ISSN (Online): 2010-3778, pp. 804-808</div>
+                    <div class="pub-metrics">
+                        <span class="metric"><i class="fas fa-quote-right"></i> Citations: 8</span>
+                        <span class="metric"><i class="fas fa-user-edit"></i> Self-Citation: 1</span>
+                    </div>
+                    <a href="https://publications.waset.org/7288.pdf" class="doi-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Publication</a>
+                </li>
+                
+                <li class="pub-item">
+                    <div class="pub-title">Perceptual Attack Resistance Selective Encryption after Video Compression H.264/AVC for Real-Time Applications</div>
+                    <div class="pub-authors">J. M. Joshi and U. D. Dalal</div>
+                    <div class="pub-journal">International Journal of Digital Image Processing, CiiT International</div>
+                    <div class="pub-details">Vol. 4, No. 3, Feb. 2012 | Print: ISSN 0974-9691, Online: ISSN 0974-9586, pp. 143-148</div>
+                    <a href="https://www.ciitresearch.org/dl/index.php/dip/article/view/DIP022012014" class="doi-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Publication</a>
+                </li>
+                
+                <li class="pub-item">
+                    <div class="pub-title">MV Compensation Attack on Fast Selective Video Encryptions</div>
+                    <div class="pub-authors">J. M. Joshi and U. D. Dalal</div>
+                    <div class="pub-journal">International Journal of Computational Engineering Research</div>
+                    <div class="pub-details">Vol. 04, Issue 1, January 2014 | ISSN: 2250-3005, pp. 32-38</div>
+                    <div class="pub-metrics">
+                        <span class="metric"><i class="fas fa-quote-right"></i> Citations: 1</span>
+                        <span class="metric"><i class="fas fa-user-edit"></i> Self-Citation: 0</span>
+                    </div>
+                    <a href="http://www.ijceronline.com/papers/Vol4_issue01/version-2/D0412032038.pdf" class="doi-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Publication</a>
+                </li>
+                
+                <li class="pub-item">
+                    <div class="pub-title">Robust Selective Encryption For Sensitive Video Application Against Error Concealment Attack</div>
+                    <div class="pub-authors">J. M. Joshi and U. D. Dalal</div>
+                    <div class="pub-journal">International Journal on Network Security, ACEEE Publication</div>
+                    <div class="pub-details">Vol. 5, Issue 3, July 2014 | ISSN: 2152-5072, pp. 13-20</div>
+                </li>
+                
+                <li class="pub-item">
+                    <div class="pub-title">Highly Secure And Fast Video Encryption Using Minimum Overhead in H.264/AVC Bitstream</div>
+                    <div class="pub-authors">J. M. Joshi and U. D. Dalal</div>
+                    <div class="pub-journal">Journal Testing and Evaluation (JTE), ASTM International</div>
+                    <div class="pub-details">Vol. 44, No. 4, July 2016 | ISSN: 0090-3973, pp. 1461-1472</div>
+                    <div class="pub-metrics">
+                        <span class="metric"><i class="fas fa-quote-right"></i> Citations: 4</span>
+                        <span class="metric"><i class="fas fa-user-edit"></i> Self-Citation: 0</span>
+                    </div>
+                    <a href="http://dx.doi.org/10.1520/JTE20140332" class="doi-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Publication</a>
+                </li>
+                
+                <li class="pub-item">
+                    <div class="pub-title">Cross Layer Design With Extensive Virtual MIMO:FS-MUP Optimization Model For Wireless Sensor Network</div>
+                    <div class="pub-authors">Monali Prajapati, J. M. Joshi</div>
+                    <div class="pub-journal">Journal of High Speed Network, IOS Press</div>
+                    <div class="pub-details">Vol. 26, No. 4, December 2020 | pp. 291-306 | DOI: 10.3233/JHS-200645</div>
+                    <div class="pub-metrics">
+                        <span class="metric"><i class="fas fa-quote-right"></i> Citations: 2</span>
+                        <span class="metric"><i class="fas fa-user-edit"></i> Self-Citation: 0</span>
+                    </div>
+			<a href="https://doi.org/10.3233/JHS-200645" class="doi-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Publication</a>
+                </li>
+		
+		<li class="pub-item">
+                    <div class="pub-title">Adaptive virtual MIMO-based cross-layer design for wireless sensor networks via hybrid optimization model</div>
+                    <div class="pub-authors">Monali Prajapati, J. M. Joshi</div>
+                    <div class="pub-journal">International Journal of Modeling, Simulation, and Scientific Computing</div>
+                    <div class="pub-details">Vol. 12, No. 02, 2150007 (2021) | DOI: 10.1142/S1793962321500070</div>
+                    <div class="pub-metrics">
+                        <span class="metric"><i class="fas fa-quote-right"></i> Citations: 4 (Source: Crossref)</span>
+                        <span class="metric"><i class="fas fa-user-edit"></i> Self-Citation: 0</span>
+                    </div>
+			<a href="https://doi.org/10.1142/S1793962321500070" class="doi-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Publication</a>
+                </li>
+		
+		<li class="pub-item">
+                    <div class="pub-title">Deep Learning Based Static Indian-Gujarati Sign Language Gesture Recognition</div>
+                    <div class="pub-authors"> Patel, Dhaval U., Jay M. Joshi</div>
+                    <div class="pub-journal">SN Computer Science</div>
+                    <div class="pub-details">Volume 3, article number 380, (July 2022)| ISSN: 2661-8907 | DOI: 10.1007/s42979-022-01254-2</div>
+                    <div class="pub-metrics">
+                        <span class="metric"><i class="fas fa-quote-right"></i> Citations: 5 </span>
+                        <span class="metric"><i class="fas fa-user-edit"></i> Self-Citation: 1</span>
+                    </div>
+			<a href="https://doi.org/10.1007/s42979-022-01254-2" class="doi-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Publication</a>
+                </li>
+
+		<li class="pub-item">
+                    <div class="pub-title">Transformer-Based Deep Learning Approach for Indian Sign Language Recognition</div>
+                    <div class="pub-authors"> Jay Joshi, Dhaval Patel</div>
+                    <div class="pub-journal"> International Journal of All Research Education and Scientific Methods</div>
+                    <div class="pub-details">Volume 11, Issue 12, December-2023| ISSN: 2455-6211 </div>
+			<a href="https://www.ijaresm.com/transformer-based-deep-learning-approach-for-indian-sign-language-recognition" class="doi-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Publication</a>
+                </li>
+
+		<li class="pub-item">
+                    <div class="pub-title">Dynamic Indian Sign Language Recognition Based on Enhanced LSTM with Custom Attention Mechanism</div>
+                    <div class="pub-authors"> Jay M. Joshi, Dhaval U. Patel</div>
+                    <div class="pub-journal"> SSRG International Journal of Electronics and Communication Engineering</div>
+                    <div class="pub-details">vol. 11,  no. 2, pp. 60-68, 2024| ISSN: 2455-6211| DOI: 10.14445/23488549/IJECE-V11I2P107</div>
+                    <div class="pub-metrics">
+                        <span class="metric"><i class="fas fa-quote-right"></i> Citations: 2 </span>
+                        <span class="metric"><i class="fas fa-user-edit"></i> Self-Citation: 0</span>
+                    </div>
+			<a href="https://doi.org/10.14445/23488549/IJECE-V11I2P107" class="doi-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Publication</a>
+                </li>
+
+		<li class="pub-item">
+                    <div class="pub-title">GIDSL: Indian-Gujarati Isolated Dynamic Sign Language Recognition using Deep Learning</div>
+                    <div class="pub-authors"> Joshi, J.M., Patel, D.U.</div>
+                    <div class="pub-journal"> SN Computer Science</div>
+                    <div class="pub-details">vol.  5, 527 (May 2024)| ISSN: 2661-8907| DOI: 10.1007/s42979-024-02776-7</div>
+                    <div class="pub-metrics">
+                        <span class="metric"><i class="fas fa-quote-right"></i> Citations: 3 </span>
+                        <span class="metric"><i class="fas fa-user-edit"></i> Self-Citation: 0</span>
+                    </div>
+			<a href="https://doi.org/10.1007/s42979-024-02776-7" class="doi-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Publication</a>
+                </li>
+
+
+            </ul>
+        <!-- </section> -->
+        </div>
+
+        <!-- National Conference Publications -->
+	<div id="tab2" class="tab-content">
+       <!-- <section class="pub-section"> -->
+            <div class="section-header">
+                <h2>National Conference Publications</h2>
+                <span class="section-count">3 Publications</span>
+            </div>
+            <ul class="pub-list">
+                <li class="pub-item">
+                    <div class="pub-title">Matlab Simulation of Cryptographic Algorithm for Mobile Communication</div>
+                    <div class="pub-authors">J. M. Joshi</div>
+                    <div class="pub-journal">National conference on Emerging Trends in Information and Communication Technology</div>
+                    <div class="pub-details">Sarvajanik College of Engineering and Technology, Surat | 27-28 January 2007</div>
+                </li>
+                
+                <li class="pub-item">
+                    <div class="pub-title">CMOS Operational Amplifier Design</div>
+                    <div class="pub-authors">J. H. Shah, J. M. Joshi</div>
+                    <div class="pub-journal">National conference on Future Trends in Electronics and Telecommunication for Sustainable Development – Vision 2020</div>
+                    <div class="pub-details">Institution of Engineers, Local centre, Pune | 28-29 October 2007</div>
+                </li>
+                
+                <li class="pub-item">
+                    <div class="pub-title">Speech encryption in 3rd generation mobile system</div>
+                    <div class="pub-authors">J. M. Joshi</div>
+                    <div class="pub-journal">National conference on Wireless Communication and VLSI design</div>
+                    <div class="pub-details">Gwalior Engineering College, Gwalior | 27-28 March 2010</div>
+                </li>
+            </ul>
+      <!--  </section> -->
+        </div>
+
+        <!-- International Conference Publications -->
+	<div id="tab3" class="tab-content">
+     <!--   <section class="pub-section"> -->
+            <div id="tab3" class="section-header">
+                <h2>International Conference Publications</h2>
+                <span class="section-count">6 Publications</span>
+            </div>
+            <ul class="pub-list">
+                <li class="pub-item">
+                    <div class="pub-title">Power Line Hum Cancellation from Electrocardiography using LMS algorithm</div>
+                    <div class="pub-authors">J. H. Shah, J. M. Joshi and V. C. Pandya</div>
+                    <div class="pub-journal">International Conference on Emerging Technologies and Applications in Engineering, Technology, and Sciences</div>
+                    <div class="pub-details">ISBN: 978-81-906220-1-1 | pp. 2027-2030, Vol 2 | Saurashtra University, Rajkot | 13-14 January 2008</div>
+                </li>
+                
+                <li class="pub-item">
+                    <div class="pub-title">Simulation and Comparison of Variant A5 Algorithms for GSM System</div>
+                    <div class="pub-authors">J. M. Joshi and U. D. Dalal</div>
+                    <div class="pub-journal">International Conference on NUiCONE 2010</div>
+                    <div class="pub-details">Nirma University, Ahmedabad | 9-11 December 2010</div>
+                </li>
+                
+                <li class="pub-item">
+                    <div class="pub-title">Enhancing Selective ISMACryp Video Encryption for Real-Time Applications in Handheld Devices</div>
+                    <div class="pub-authors">J. M. Joshi and U. D. Dalal</div>
+                    <div class="pub-journal">TENCON 2011 - 2011 IEEE Region 10 Conference</div>
+                    <div class="pub-details">ISBN 978-1-4577-0256-3| pp.  274-278, 22-24 Nov 2011, Bali, Indonesia | DOI: 10.1109/TENCON.2011.6129107 </div>
+		    <div class="pub-metrics">
+                        <span class="metric"><i class="fas fa-quote-right"></i> Citations: 4 </span>
+                        <span class="metric"><i class="fas fa-user-edit"></i> Self-Citation: 3</span>
+                    </div>
+
+ 		    <a href="http://dx.doi.org/10.1109/TENCON.2011.6129107" class="doi-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Publication</a>
+		</li>
+
+		<li class="pub-item">
+                    <div class="pub-title">Proposed H.264/AVC for Real-Time Applications in DVB-H Server</div>
+                    <div class="pub-authors">J. M. Joshi and U. D. Dalal</div>
+                    <div class="pub-journal">2012 IEEE International Conference on Computer System and Network Technology (CSNT 2012)</div>
+                    <div class="pub-details"> ISBN: 978-1-4673-1538-8| pp. 539-542, 11-13 May 2012, Rajkot, Gujarat | DOI: 10.1109/CSNT.2012.122 </div>
+ 		    <a href="http://dx.doi.org/10.1109/CSNT.2012.122" class="doi-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Publication</a>
+		</li>
+
+		<li class="pub-item">
+                    <div class="pub-title">Histogram Matching Attack on Selective Perceptual Video Encryptions in H.264/AVC</div>
+                    <div class="pub-authors">J. M. Joshi and U. D. Dalal</div>
+                    <div class="pub-journal">2012 Annual IEEE India Conference (INDICON)</div>
+                    <div class="pub-details"> ISBN 978-1-4673-2271-3|  pp. 357 - 360, 7-9 Dec 2012, Kochi, Kerala, India | DOI: 10.1109/INDCON.2012.6420643 </div>
+		     <div class="pub-metrics">
+                        <span class="metric"><i class="fas fa-quote-right"></i> Citations: 1 </span>
+                        <span class="metric"><i class="fas fa-user-edit"></i> Self-Citation: 0</span>
+                    </div>
+ 		    <a href="http://dx.doi.org/10.1109/INDCON.2012.6420643" class="doi-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Publication</a>
+		</li>
+
+		<li class="pub-item">
+                    <div class="pub-title">Review of Indian Dynamic Sign Language Recognition System</div>
+                    <div class="pub-authors">Patel, D.U., Joshi, J.M.</div>
+                    <div class="pub-journal">Springer International Conference on Communication and Computational Technologies: ICCCT 2022</div>
+                    <div class="pub-details"> ISBN 978-1-4673-2271-3|  pp. 357 - 360, Sept. 2022, Algorithms for Intelligent Systems. Springer, Singapore | DOI: 10.1007/978-981-19-3951-8_2</div>
+		     <div class="pub-metrics">
+                        <span class="metric"><i class="fas fa-quote-right"></i> Citations: 1 </span>
+                        <span class="metric"><i class="fas fa-user-edit"></i> Self-Citation: 0</span>
+                    </div>
+ 		    <a href="https://doi.org/10.1007/978-981-19-3951-8_2" class="doi-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Publication</a>
+		</li>
+
+	    </ul>
+	</section>
+	</div>
+</div>
+<div style="display: flex; justify-content: space-between; align-items: center; margin: 20px 0;">
+      <a href="index.html" class="back-link">← Back to Main Page</a>
+      <button id="scrollTopBtn" style="display: symbol;" onclick="scrollToTop()"><span style="font-size: 1.5em;">&#129153;</button>
+    </div>
+
+<footer>
+      © 2025 Dr. Jay Mahendrakumar Joshi
+    </footer>
+  </div>
+<script>
+        function openTab(tabId) {
+            // Hide all tab contents
+            const tabContents = document.getElementsByClassName('tab-content');
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove('active');
+            }
+            
+            // Deactivate all tab buttons
+            const tabButtons = document.getElementsByClassName('tab-button');
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove('active');
+            }
+            
+            // Show the selected tab content and activate the button
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+	const btn = document.getElementById("scrollTopBtn");
+	function scrollToTop(){
+		window.scrollTo({top: 0, behavior: 'smooth'})
+	}
+    </script>
+
+</body>
+</html>
+

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self-Development Training Portfolio</title>
+    <style>
+        :root {
+            --primary-color: #1a5276;
+            --secondary-color: #2980b9;
+            --accent-color: #3498db;
+            --light-color: #eaf2f8;
+            --dark-color: #1c2833;
+            --success-color: #27ae60;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+	    .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 10px 20px;
+      background-color: var(--secondary-color);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            border-radius: 10px 10px 0 0;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-color);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        
+        th {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            font-weight: 600;
+            text-align: left;
+            padding: 12px 15px;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        
+        .highlight {
+            background-color: rgba(52, 152, 219, 0.1);
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .badge {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+        }
+            .scrollTopBtn{
+	font-size: 18px;
+	border: none;
+	outline: none;
+	background-color: var(--secondary-color);
+	color: white;
+	cursor: pointer;
+	padding: 10px 20px;
+	border-radius: 5px;
+	transition: background-color 0.3s ease;
+	}
+    .scrollTopBtn:hover{
+	background-color: var(--accent-color);
+	transform: translateY(-2px);
+	box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+	}
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            table, th, td {
+                font-size: 0.9rem;
+            }
+            
+            th, td {
+                padding: 8px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Professional Development Journey</h1>
+            <div class="subtitle">Workshops & Training Programs</div>
+        </header>
+        <div class="card">
+            <h2>Technical Workshops & Training</h2>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Title</th>
+                        <th>Organizer</th>
+                        <th>Period</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Visual eCommerce and eMultimedia</td>
+                        <td>"IMAGE" Institute of Digital Technology, Gandhinagar</td>
+                        <td>1st March 2001</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Digital Steganography - 'An art of hiding digital information in Multimedia'</td>
+                        <td>Sarvajanik College of Engineering and Technology, Surat</td>
+                        <td>28th June 2004 - 3rd July 2004</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Information Security</td>
+                        <td>Sarvajanik College of Engineering and Technology, Surat</td>
+                        <td>1st Nov. - 6th Nov. 2004</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Embedded System Design with DSP Implementation</td>
+                        <td>Electrical Engg. Dept., Faculty of Tech, MSU, Baroda</td>
+                        <td>19th Dec. - 31st Dec. 2005</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Wireless Communication and FPGA Debugging</td>
+                        <td>Sardar Vallabhabhai National Institute of Tech., Surat</td>
+                        <td>16th April 2011</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Virtual DSP Lab</td>
+                        <td>Sardar Vallabhabhai National Institute of Tech., Surat, and e-Prayog, Virtual Labs (Electronics), IIT, Bombay</td>
+                        <td>17th-18th March 2012</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>RF-Microwave/ Wireless communication & low-level DC measurement Solution</td>
+                        <td>Sardar Vallabhabhai National Institute of Tech., Surat</td>
+                        <td>18th May 2012</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Patent Search Methodology</td>
+                        <td>S. V. M. Inst. Of Tech., Bharuch, and GTU, Ahmedabad</td>
+                        <td>6th Oct. 2012</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Wind River Technology Show</td>
+                        <td>Sardar Vallabhabhai National Institute of Tech., Surat</td>
+                        <td>19th Jan. 2013</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Master Mind Program</td>
+                        <td>EDU Tech. & IBM</td>
+                        <td>4th April 2013</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>Simulation of Networks using NS-2</td>
+                        <td>S. V. M. Inst. Of Tech., Bharuch</td>
+                        <td>11th-15th May 2013</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>Exploring 32-bit Microcontroller</td>
+                        <td>Sardar Vallabhabhai National Institute of Tech., Surat</td>
+                        <td>3rd-7th June 2013</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>Network Simulator and Related Technologies using NetSIM</td>
+                        <td>DELLSOFT Tech. Pvt. Ltd., Mumbai</td>
+                        <td>3rd - 5th Oct. 2016</td>
+                    </tr>
+		    <tr>
+                        <td>14</td>
+                        <td>Introduction to Adaptive Signal Processing</td>
+                        <td>NPTEL Online Certification</td>
+                        <td>Aug - Oct 2023 (8 week course) </td>
+                    </tr>
+		    <tr>
+                        <td>15</td>
+                        <td>Silicon Chip Design from Circuits to System</td>
+                        <td>ATAL FDP at Sarvajanik College of Engineering and Technology, Surat</td>
+                        <td>18 - 23 Dec., 2023 </td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>Deep Learning</td>
+                        <td>NPTEL Online Certification</td>
+                        <td>Jan-Apr 2024 (12 week course) </td>
+                    </tr>
+		    <tr>
+                        <td>17</td>
+                        <td>Industrial Training</td>
+                        <td>Shri Khedut Sahakari Khand Udyog Mandli Ltd., Bardoli</td>
+                        <td>04 - 16 Nov, 2024 </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="card">
+            <h2>Skills & Expertise Areas</h2>
+            <div>
+                <span class="badge">Digital Technology</span>
+                <span class="badge">Information Security</span>
+                <span class="badge">Embedded System</span>
+                <span class="badge">Wireless Communication</span>
+                <span class="badge">DSP Implementation</span>
+                <span class="badge">Network Simulation</span>
+                <span class="badge">FPGA Debugging</span> 
+                <span class="badge">Emerging Technologies in Electronics and ICT</span>
+            </div>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin: 20px 0;">
+      <a href="index.html" class="back-link">← Back to Main Page</a>
+      <button id="scrollTopBtn" style="display: symbol;" onclick="scrollToTop()"><span style="font-size: 1.5em;">&#129153;</button>
+    </div>
+
+       <footer>
+      © 2025 Dr. Jay Mahendrakumar Joshi
+    </footer>
+  </div>
+<script>
+	const btn = document.getElementById("scrollTopBtn");
+	function scrollToTop(){
+		window.scrollTo({top: 0, behavior: 'smooth'})
+	}
+</script>
+</body>
+</html>

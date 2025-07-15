@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expert Lectures | Academic Contributions</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --gradient-light: #3498db;
+            --gradient-dark: #2c3e50;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        header {
+            position: relative;
+            height: 400px;
+            background: linear-gradient(135deg, var(--gradient-light), var(--gradient-dark)), 
+                        url("/api/placeholder/1200/400") center/cover no-repeat;
+            background-blend-mode: multiply;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(90deg, 
+                var(--secondary-color), var(--accent-color), var(--primary-color),
+                var(--secondary-color), var(--accent-color), var(--primary-color));
+            background-size: 600% 600%;
+            animation: gradient 12s ease infinite;
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .header-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(231, 76, 60, 0.4);
+        }
+        
+        .section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            border-radius: 5px;
+        }
+        
+        .lectures-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+        
+        .lecture-card {
+            position: relative;
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            flex: 1 1 400px;
+            max-width: 500px;
+            transition: all 0.3s ease;
+        }
+        
+        .lecture-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .lecture-header {
+            position: relative;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .lecture-card:nth-child(1) .lecture-header {
+            background: linear-gradient(135deg, #2980b9, #3498db);
+        }
+        
+        .lecture-card:nth-child(2) .lecture-header {
+            background: linear-gradient(135deg, #c0392b, #e74c3c);
+        }
+        
+        .lecture-icon {
+            font-size: 6rem;
+            color: rgba(255, 255, 255, 0.2);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .lecture-topic {
+            position: relative;
+            z-index: 2;
+            padding: 0.8rem 1.5rem;
+            background-color: white;
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.6rem;
+            border-radius: 5px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .lecture-body {
+            padding: 2rem;
+        }
+        
+        .lecture-title {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+        
+        .lecture-info {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .info-icon {
+            color: var(--secondary-color);
+            margin-right: 0.5rem;
+            min-width: 24px;
+            line-height: 1.6;
+        }
+         .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 10px 20px;
+      background-color: var(--secondary-color);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+        .lecture-badge {
+            display: inline-block;
+            font-size: 0.9rem;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            margin-top: 1rem;
+        }
+        
+        .features-section {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .features-title {
+            color: white;
+            margin-bottom: 3rem;
+        }
+        
+        .features-title::after {
+            background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
+        }
+        
+        .features-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+        
+        .feature-box {
+            flex: 1 1 300px;
+            max-width: 350px;
+            padding: 2rem;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-box:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-desc {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .stats-section {
+            padding: 3rem 0;
+            background-color: var(--light-color);
+        }
+        
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .stat-box {
+            text-align: center;
+            padding: 2rem;
+            flex: 1 1 200px;
+            max-width: 250px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-text {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+        
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .footer-links {
+            margin: 2rem 0;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0 1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            margin-top: 2rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .header-content p {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .lecture-topic {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Expert Lectures</h1>
+            <p>Sharing knowledge and expertise with the academic community</p>
+            
+        </div>
+    </header>
+    <section id="lectures" class="section">
+        <div class="container">
+            <h2 class="section-title">Featured Lectures</h2>
+            
+            <div class="lectures-container">
+                <div class="lecture-card">
+                    <div class="lecture-header">
+                        <div class="lecture-icon">📹</div>
+                        <div class="lecture-topic">Video Encryption</div>
+                    </div>
+                    <div class="lecture-body">
+                        <h3 class="lecture-title">Expert lecture on Video Encryption</h3>
+                        
+                        <div class="lecture-info">
+                            <span class="info-icon">📚</span>
+                            <span>Short Term Training Program: "3G and 4G Technology"</span>
+                        </div>
+                        
+                        <div class="lecture-info">
+                            <span class="info-icon">🏛️</span>
+                            <span>Sardar Vallabhbhai National Institute of Technology, Surat</span>
+                        </div>
+                        
+                        <div class="lecture-info">
+                            <span class="info-icon">📅</span>
+                            <span>September 30 - October 4, 2013</span>
+                        </div>
+                        
+                        <div class="lecture-badge">Multimedia Encryption</div><br><br>
+
+			<center>
+			<a href="https://docs.google.com/presentation/d/1RbmKNM7DfNXvf7pTg9iGqD3HB-CLXpqP/edit?usp=sharing&ouid=101643300384352777935&rtpof=true&sd=true" class="btn">View Lectures</a>
+			</center>
+                    </div>
+                </div>
+                
+                <div class="lecture-card">
+                    <div class="lecture-header">
+                        <div class="lecture-icon">🔒</div>
+                        <div class="lecture-topic">Network Security</div>
+                    </div>
+                    <div class="lecture-body">
+                        <h3 class="lecture-title">Expert lecture on Network Security</h3>
+                        
+                        <div class="lecture-info">
+                            <span class="info-icon">📚</span>
+                            <span>National Seminar: "Advance Computer Network"</span>
+                        </div>
+                        
+                        <div class="lecture-info">
+                            <span class="info-icon">🏛️</span>
+                            <span>V.I.E.R., Vadodara</span>
+                        </div>
+                        
+                        <div class="lecture-info">
+                            <span class="info-icon">📅</span>
+                            <span>November 19, 2014</span>
+                        </div>
+                        
+                        <div class="lecture-badge">Information Security</div><br><br>
+
+			<center>
+			<a href="https://docs.google.com/presentation/d/1Oq-FLdAzHR3N9k85PMEe8LVlWWDs1o46/edit?usp=sharing&ouid=101643300384352777935&rtpof=true&sd=true" class="btn">View Lectures</a>
+			</center>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        
+    <p><a href="index.html" class="back-link">← Back to Main Page</a>
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title features-title">Areas of Expertise</h2>
+            
+            <div class="features-container">
+                <div class="feature-box">
+                    <div class="feature-icon">🔐</div>
+                    <h3 class="feature-title">Cryptography & Security</h3>
+                    <p class="feature-desc">Specialized knowledge in encryption algorithms, security protocols, and data protection techniques for modern computing environments.</p>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-icon">📱</div>
+                    <h3 class="feature-title">Mobile Technologies</h3>
+                    <p class="feature-desc">Expert understanding of 3G, 4G, and emerging communication technologies that power our connected world.</p>
+                </div>
+                
+                <div class="feature-box">
+                    <div class="feature-icon">💻</div>
+                    <h3 class="feature-title">Network Architecture</h3>
+                    <p class="feature-desc">Deep insights into computer network design, protocols, and security implementations for enterprise environments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h3>Continuing the Knowledge Sharing Journey</h3>
+                <p>Available for expert lectures, workshops, and technical consultations</p>
+                
+                
+                
+                <p class="copyright">© 2025 Dr. Jay Mahendrakumar Joshi</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

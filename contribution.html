@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Contributions to Society</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+	.back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 10px 20px;
+      background-color: var(--secondary-color);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+.scrollTopBtn{
+	font-size: 18px;
+	border: none;
+	outline: none;
+	background-color: var(--secondary-color);
+	color: white;
+	cursor: pointer;
+	padding: 10px 20px;
+	border-radius: 5px;
+	transition: background-color 0.3s ease;
+	}
+    .scrollTopBtn:hover{
+	background-color: var(--accent-color);
+	transform: translateY(-2px);
+	box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+	}
+
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .header-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .header-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .stat-box {
+            background-color: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            flex: 0 1 250px;
+            transition: transform 0.3s ease;
+        }
+         .highlight-box {
+      background: #ecf0f1;
+      padding: 20px;
+      border-left: 5px solid #3498db;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .highlight-box strong {
+      color: #2c3e50;
+    }
+        .stat-box:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--secondary-color);
+        }
+        
+        .section {
+            padding: 3rem 0;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: var(--accent-color);
+        }
+        
+        .conference-list {
+            margin: 2rem 0;
+        }
+        
+        .conference-item {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+            border-left: 5px solid var(--primary-color);
+        }
+        
+        .conference-item:hover {
+            transform: translateX(5px);
+        }
+        
+        .conference-title {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        
+        .conference-details {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .badge {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            margin-right: 0.5rem;
+        }
+        
+        .year-badge {
+            background-color: var(--secondary-color);
+        }
+        
+        .role-badge {
+            background-color: var(--accent-color);
+        }
+        
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        
+        .tab-container {
+            margin-bottom: 2rem;
+        }
+        
+        .tab-buttons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .tab-button {
+            padding: 0.8rem 1.5rem;
+            background-color: #e9ecef;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+            border-radius: 5px;
+        }
+        
+        .tab-button.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+	.subtitle {
+      text-align: center;
+      font-size: 1.1em;
+      color: #7f8c8d;
+      margin-bottom: 30px;
+    }
+.info-box p {
+      margin: 10px 0;
+      font-size: 1.1rem;
+    }
+    .info-box strong {
+      color: #2c3e50;
+    }
+    .description {
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .info-box {
+      background: #eaf3fb;
+      padding: 25px;
+      border-left: 6px solid #3498db;
+      border-radius: 10px;
+      margin-bottom: 25px;
+    }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2rem;
+            }
+            
+            .header-content p {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>Research Contributions to Society</h1>
+                <p>A showcase of academic service and contributions to the research community</p>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="stats">
+            <div class="stat-box">
+                <div class="stat-number">30+</div>
+                <div class="stat-label">International Conference Reviews</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">6</div>
+                <div class="stat-label">Journal Reviews</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">3</div>
+                <div class="stat-label">Session Chair Experiences</div>
+            </div>
+	    <div class="stat-box">
+                <div class="stat-number">5</div>
+                <div class="stat-label">DPC Member</div>
+            </div>
+	    <div class="stat-box">
+                <div class="stat-number">5</div>
+                <div class="stat-label">Ph.D. Supervision</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="tab-container">
+                <div class="tab-buttons">
+                    <button class="tab-button active" onclick="openTab('tab1')">International Conference Reviews</button>
+                    <button class="tab-button" onclick="openTab('tab2')">National Conference Reviews</button>
+                    <button class="tab-button" onclick="openTab('tab3')">Journal Reviews</button>
+                    <button class="tab-button" onclick="openTab('tab4')">Session Chair</button>
+		    <button class="tab-button" onclick="openTab('tab5')">DPC Member</button>
+                    <button class="tab-button" onclick="openTab('tab6')">Ph.D. Supervisor</button>	
+                </div>
+                
+                <div id="tab1" class="tab-content active">
+                    <h2 class="section-title">TPC Member - International Conferences</h2>
+                    <div class="conference-list">
+			<div class="conference-item">
+                            <div class="conference-title">International Conference on Computer Intelligent Systems & Networking (ICCISN)</div>
+                            <div class="conference-details">Alfaisal University, Sousse, Tunisia</div>
+                            <span class="badge year-badge">2018</span>
+                        </div>
+
+			<div class="conference-item">
+                            <div class="conference-title">EAI International Conference on Future Internet Technologies and Trends (ICFITT)</div>
+                            <div class="conference-details">European Alliance for Innovation (EAI), Surat, India</div>
+                            <span class="badge year-badge">2017</span>
+                        </div>
+
+			<div class="conference-item">
+                            <div class="conference-title">IEEE Global Conference on Signal and Information Processing (GlobalSIP)</div>
+                            <div class="conference-details">Montreal, Canada</div>
+                            <span class="badge year-badge">2017</span>
+                            <span class="badge">Image and video processing</span>
+                        </div>
+
+			<div class="conference-item">
+                            <div class="conference-title">4th International Conference on Communication And Computer Engineering (ICOCOE)</div>
+                            <div class="conference-details">Malaysia Technical Scientist Association (MALTESAS), Penang, Malaysia</div>
+                            <span class="badge year-badge">2017</span>
+                            <span class="badge">Computer and Communication</span>
+                        </div>
+
+			<div class="conference-item">
+                            <div class="conference-title">World Symposium on Computer Applications & Research (WSCAR)</div>
+                            <div class="conference-details">WSCAR, Istanbul, Turkey</div>
+                            <span class="badge year-badge">2017</span>
+                        </div>
+
+			<div class="conference-item">
+                            <div class="conference-title">International Symposium on Computational Intelligence & Applications (ISCIA)</div>
+                            <div class="conference-details">Society for Advancement of Science & Technology (SAST), Malacca, Malaysia</div>
+                            <span class="badge year-badge">2017</span>
+			    <span class="badge"> Applications of Computational Intelligence: Internet and multimedia</span>
+                        </div>
+
+			<div class="conference-item">
+                            <div class="conference-title"> Progress in Electronics Engineering, Computer Engineering and Information Technology (PIECT)</div>
+                            <div class="conference-details">Malaysia Technical Scientist Association (MALTESAS), Bandung, Indonesia</div>
+                            <span class="badge year-badge">2017</span>
+			    <span class="badge">Specific Electronic and Computer Engineering</span>
+			    <span class="badge">Circuits and Systems for Communications</span>
+                        </div>
+
+			<div class="conference-item">
+                            <div class="conference-title">Third International Symposium on Emerging Topics in Circuits and Systems (SETCAS)</div>
+                            <div class="conference-details"> Manipal University, Karnataka, India</div>
+                            <span class="badge year-badge">2017</span>
+                        </div>
+
+			<div class="conference-item">
+                            <div class="conference-title">International Conference on Research and Innovation in Computer Engineering and Computer Sciences (RICCES)</div>
+                            <div class="conference-details">Malaysia Technical Scientist Association (MALTESAS), Kedah, Malaysia</div>
+                            <span class="badge year-badge">2017</span>
+			    <span class="badge">Electronics and Computer Engineering</span>
+                        </div>
+
+			<div class="conference-item">
+                            <div class="conference-title">Parul University International Conference on Engineering & Technology : Smart Engineering (PiCET)</div>
+                            <div class="conference-details"> Parul University, Vadodara, India</div>
+                            <span class="badge year-badge">2017</span>
+			    <span class="badge"> Digital Signal, Speech, Image and Video Processing</span>
+                        </div>
+
+			<div class="conference-item">
+                            <div class="conference-title">International Conference on Applied Mathematics in Science and Engineering</div>
+                            <div class="conference-details">Malaysia Technical Scientist Association (MALTESAS), Melaka, Malaysia</div>
+                            <span class="badge year-badge">2016</span>
+                            <span class="badge">Electrical, Electronics and Computer Engineering</span>
+                        </div>
+
+			<div class="conference-item">
+                            <div class="conference-title">3rd International Conference on Computer, Communication and Control Technology (I4CT)</div>
+                            <div class="conference-details">Malaysia Technical Scientist Association Kota Kinabalu, Sabah</div>
+                            <span class="badge year-badge">2016</span>
+                            <span class="badge">Antenna and Propagation</span>
+                        </div>
+
+			<div class="conference-item">
+                            <div class="conference-title">International Conference on Advanced Research on Circuits and Systems International Conference (ARONCAS)</div>
+                            <div class="conference-details">Malaysia Technical Scientist Association (MALTESAS) and University of Hradec Kr´alov´e, Czech Republic</div>
+                            <span class="badge year-badge">2016</span>
+                            <span class="badge">Communication Systems & Signal Processing</span>
+                        </div>
+
+			<div class="conference-item">
+                            <div class="conference-title">International Conference on Advanced Research in Electronic Engineering and Information Technology (AVAREIT)</div>
+                            <div class="conference-details">Malaysia Technical Scientist Association, Bali, Indonesia</div>
+                            <span class="badge year-badge">2016</span>
+                            <span class="badge">Electronics Engg: Communication</span>
+                        </div>
+
+			<div class="conference-item">
+                            <div class="conference-title">International Conference on Progress in Computer Sciences and Information Technology (PROCSIT)</div>
+                            <div class="conference-details"> Malaysia Technical Scientist Association (MALTESAS), Langkawi Island, Kedah, Malaysia</div>
+                            <span class="badge year-badge">2016</span>
+                            <span class="badge">Image Compression</span>
+			    <span class="badge">Multimedia Processing</span>
+                        </div>
+
+			<div class="conference-item">
+                            <div class="conference-title">International Conference on Advancement Research in Circuits and Systems (ARECAS) </div>
+                            <div class="conference-details"> Universiti Teknikal Malaysia Melaka (UTeM) and Malaysia Technical Scientist Association (MALTESAS), Langkawi, Kedah, Malaysia</div>
+                            <span class="badge year-badge">2016</span>
+			    <span class="badge">Specific Electronic and Computer Engineering</span>
+			    <span class="badge">Circuits and Systems for Communications</span>
+                        </div>
+
+			<div class="conference-item">
+                            <div class="conference-title">International Conference on 2016 Advanced Research in Engineering and Information Technology (AREITIC) </div>
+                            <div class="conference-details"> Universiti Teknikal Malaysia Melaka (UTeM) and Malaysia Technical Scientist Association (MALTESAS), Bandung, Indonesia</div>
+                            <span class="badge year-badge">2016</span>
+			    <span class="badge">Information Technology</span>
+                        </div>
+
+			<div class="conference-item">
+                            <div class="conference-title">International Conference on Control Theory and Its Application (CNTIA)</div>
+                            <div class="conference-details">Newcastle University Singapore, Malaysia Technical Scientist Association (MALTESAS) and Shanghai Jiao Tong University Melaka, Malaysia</div>
+                            <span class="badge year-badge">2015</span>
+                            <span class="badge">Adaptive Control</span>
+                        </div>
+
+			<div class="conference-item">
+                            <div class="conference-title">4th IEEE International Conference on Advance in Computing, Communications & Informatics (ICACCI)</div>
+                            <div class="conference-details">School of Engineering and Technology (SCMS), Kerala, India</div>
+                            <span class="badge year-badge">2015</span>
+                            <span class="badge">Communication</span>
+                        </div>
+	
+			<div class="conference-item">
+                            <div class="conference-title">IEEE International Conference on Circuits and Systems Symposium (ICSyS)</div>
+                            <div class="conference-details">IEEE Circuits and Systems (CAS) Society, Malaysia Chapter Langkawi, Malaysia</div>
+                            <span class="badge year-badge">2015</span>
+                            <span class="badge">Digital Signal Processing</span>
+			    <span class="badge">RF and Communications</span>
+			    <span class="badge">Visual Signal Processing</span>
+                        </div>
+
+			<div class="conference-item">
+                            <div class="conference-title">International Conference on Advance Research in Electrical and Electronics (ARiEET)</div>
+                            <div class="conference-details">Malaysia Technical Scientist Association Bandung, Indonesia</div>
+                            <span class="badge year-badge">2015</span>
+                            <span class="badge">Communication Systems</span>
+                        </div>
+
+			<div class="conference-item">
+                            <div class="conference-title"> International Conference on Machine learning and Signal Processing (MALSIP)</div>
+                            <div class="conference-details">Malaysia Technical Scientist Association Melaka, Malaysia</div>
+                            <span class="badge year-badge">2015</span>
+                            <span class="badge">Signal Processing for Communications</span>
+			    <span class="badge">Image and Multidimensional Signal Processing</span>
+                        </div>
+
+			<div class="conference-item">
+                            <div class="conference-title">  IEEE International RF and Microwave Conference (RFM)</div>
+                            <div class="conference-details"> IEEE Antennas and Propagation, Microwave Theory & Techniques and Electromagnetic Compatibility Joint Chapter, Malaysia Kuching, Sarawak, Malaysia</div>
+                            <span class="badge year-badge">2015</span>
+                            <span class="badge">Microwave Antennas</span>
+                        </div>
+
+			<div class="conference-item">
+                            <div class="conference-title">European Signal Processing Conference (EUSIPCO)</div>
+                            <div class="conference-details">European Association for Signal Processing (EURASIP), Lisbon, Portugal</div>
+                            <span class="badge year-badge">2014</span>
+                            <span class="badge">Signal processing applications</span>
+                            <span class="badge">Speech processing</span>
+                        </div>
+
+			<div class="conference-item">
+                            <div class="conference-title">IEEE International RF and Microwave (RFM)</div>
+                            <div class="conference-details">IEEE Antennas and Propagation, Microwave Theory & Techniques and Electromagnetic Compatibility Joint Chapter, Malaysia Bayview Beach Resort Penang, Malaysia</div>
+                            <span class="badge year-badge">2013</span>
+                            <span class="badge">Microwave Antenna Design</span>
+                            <span class="badge">Wireless Communication</span>
+                        </div>
+
+                        <div class="conference-item">
+                            <div class="conference-title">IEEE Symposium on Wireless Technology & Applications (ISWTA)</div>
+                            <div class="conference-details">IEEE Malaysia Power Electronics, Industrial Electronics & Industrial Applications Joint Chapter</div>
+                            <div class="conference-details">Bandung, Indonesia</div>
+                            <span class="badge year-badge">2012</span>
+                            <span class="badge">Wireless Communication</span>
+			    <span class="badge">Network</span>
+			    <span class="badge">Security</span>
+                        </div>
+                        
+                        <div class="conference-item">
+                            <div class="conference-title">IEEE Symposium on Industrial Electronics and Applications (ISIEA)</div>
+                            <div class="conference-details">IEEE Malaysia Power Electronics, Industrial Electronics & Industrial Applications Joint Chapter</div>
+                            <div class="conference-details">Bandung, Indonesia</div>
+                            <span class="badge year-badge">2012</span>
+                            <span class="badge">Signal and Image Processing</span>
+                        </div>
+                        
+                        <div class="conference-item">
+                            <div class="conference-title">Emerging Technology Trends in Electronics, Communication and Networking (ET2ECN)</div>
+                            <div class="conference-details">Sardar Vallabhbhai National Inst. Of Tech., Surat, India</div>
+                            <span class="badge year-badge">2012</span>
+                            <span class="badge">Communication Engineering</span>
+                        </div>
+                        
+                        <div class="conference-item">
+                            <div class="conference-title">IEEE International Conference on Electronics Design, Systems and Applications (ICEDSA)</div>
+                            <div class="conference-details">Malaysia Section IE/IA/PEL Joint Chapter, Kuala Lumpur, Malaysia</div>
+                            <span class="badge year-badge">2012</span>
+                            <span class="badge">Digital Systems and Applications</span>
+                            <span class="badge">Communications Technology and Applications</span>
+                        </div>
+                        
+                        <div class="conference-item">
+                            <div class="conference-title">IEEE Asia-Pacific Conference on Applied Electromagnetic (APACE)</div>
+                            <div class="conference-details">IEEE Malaysia AP/MTT/EMC Joint Chapter, Melaka, Malaysia</div>
+                            <span class="badge year-badge">2012</span>
+                            <span class="badge">Electromagnetic Metrology</span>
+                        </div>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <!-- More conferences can be added here -->
+                    </div>
+                </div>
+                
+                <div id="tab2" class="tab-content">
+                    <h2 class="section-title">National Conference Reviews</h2>
+                    <div class="conference-list">
+                        <div class="conference-item">
+                            <div class="conference-title">National Conference on Recent Trends in Computer and Communication Technology (RTCCT)</div>
+                            <div class="conference-details">Sarvajanik College of Engineering and Technology, Surat</div>
+                            <span class="badge year-badge">2016</span>
+                            <span class="badge">Wireless Communications and Signal Processing</span>
+                            <span class="badge">Image, Video and Multimedia Processing</span>
+                        </div>
+                        
+                        <div class="conference-item">
+                            <div class="conference-title">National conference on Recent Advances in Circuits, Communication and Computing Technology (RACCCT)</div>
+                            <div class="conference-details">SCET Multidisciplinary conference on Engineering & Technology (SMDCET)</div>
+                            <div class="conference-details">Sarvajanik College of Engineering and Technology, Surat</div>
+                            <span class="badge year-badge">2017</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="tab3" class="tab-content">
+                    <h2 class="section-title">Journal Reviews</h2>
+                    <div class="conference-list">
+                        <div class="conference-item">
+                            <div class="conference-title">International Journal on Springer Transactions on Data Hiding and Multimedia Security</div>
+                            <div class="conference-details">Springer Verlang</div>
+                            <span class="badge year-badge">2013</span>
+                            <span class="badge">Special issue of Visual Cryptography</span>
+                        </div>
+                        
+                        <div class="conference-item">
+                            <div class="conference-title">Journal of Testing and Evaluation (JTE)</div>
+                            <div class="conference-details">ASTM International</div>
+                            <span class="badge year-badge">2014</span>
+                            <span class="badge">Multimedia Security</span>
+                        </div>
+                        
+                        <div class="conference-item">
+                            <div class="conference-title">IET Information Security</div>
+                            <div class="conference-details">IET International</div>
+                            <span class="badge year-badge">2015</span>
+                            <span class="badge">Information Security</span>
+                        </div>
+                        
+                        <div class="conference-item">
+                            <div class="conference-title">Science Journal of Circuits, Systems, and Signal Processing (CSSP)</div>
+                            <div class="conference-details">SciencePG (Science Publishing Group), USA</div>
+                            <span class="badge year-badge">2016</span>
+                            <span class="badge">Wireless Communication</span>
+                        </div>
+                        
+                        <div class="conference-item">
+                            <div class="conference-title">Special Issues on Engineering (SPIENG)</div>
+                            <div class="conference-details">Malaysia Technical Scientist Association (MALTESAS), Malaysia</div>
+                            <span class="badge year-badge">2017</span>
+                        </div>
+                        
+                        <div class="conference-item">
+                            <div class="conference-title">International Journal of Communication System (IJCS)</div>
+                            <div class="conference-details">John Wiley & Sons Ltd.</div>
+                            <span class="badge year-badge">2017</span>
+                            <span class="badge">Wireless Communication</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="tab4" class="tab-content">
+                    <h2 class="section-title">Session Chair Experience</h2>
+                    <div class="conference-list">
+                        <div class="conference-item">
+                            <div class="conference-title">Kshitij-2008 (State level Student Paper presentation)</div>
+                            <div class="conference-details">Sarvajanik College of Engineering and Tech., Surat</div>
+                            <span class="badge year-badge">2008</span>
+                            <span class="badge">Embedded system</span>
+                            <span class="badge role-badge">Session Chair</span>
+                        </div>
+                        
+                        <div class="conference-item">
+                            <div class="conference-title">IEEE International Conference on Emerging Technology Trends in Electronics, Communication and Networking (ET2ECN)</div>
+                            <div class="conference-details">Sardar Vallabhbhai National Inst. Of Tech., Surat</div>
+                            <span class="badge year-badge">2012</span>
+                            <span class="badge">Communication Engineering</span>
+                            <span class="badge role-badge">Session Chair</span>
+                        </div>
+                        
+                        <div class="conference-item">
+                            <div class="conference-title">National Conference on Recent Advances in Circuits, Communication and Computing Technology (RACCCT)</div>
+                            <div class="conference-details">Sarvajanik College of Engineering and Tech., Surat</div>
+                            <span class="badge year-badge">2017</span>
+                            <span class="badge">Computing Technology</span>
+                            <span class="badge role-badge">Session Chair</span>
+                        </div>
+                    </div>
+                </div>
+	
+		 <div id="tab5" class="tab-content">
+                    <h2 class="section-title">DPC Member</h2>
+                    <div class="container">
+    			<p class="subtitle">Bhagwan Mahavir University</p>
+   
+   			<div class="highlight-box">
+      				<p><strong>Designation:</strong> Doctoral Progress Committee (DPC) Members</p>
+      				<p><strong>Institution:</strong> Bhagwan Mahavir University</p>
+      				<p><strong>Team:</strong> 5 Research Scholar Students</p>
+      				<p><strong>Working Since:</strong> 2021</p>
+    			</div>
+
+    			<p>This committee plays a vital role in guiding research scholars, reviewing progress, and ensuring the quality of doctoral research aligned with university standards. Since 2021, the DPC at Bhagwan Mahavir University has been mentoring and evaluating five dedicated research scholars in various domains.</p>
+
+  		</div>
+              </div>
+		<div id="tab6" class="tab-content">
+                    <h2 class="section-title">Ph.D. Supervisor</h2>
+		    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+                    <p class="subtitle">Gujarat Technological University</p>
+
+    <div class="info-box">
+      <p><strong>Position:</strong> Ph.D. Supervisor</p>
+      <p><strong>University:</strong> Gujarat Technological University (GTU)</p>
+      <p><strong>Currently Supervising:</strong> 3 Research Scholars</p>
+      <p><strong>Students Graduated:</strong> 2 Scholars</p>
+      <p><strong>Active Since:</strong> 2018</p>
+    </div>
+
+    <p class="description">
+      As a Ph.D. Supervisor at GTU, the commitment to academic excellence and research mentorship has resulted in the successful guidance of five research scholars since 2018. With a focus on innovation, discipline, and scholarly growth, the supervisor continues to lead 3 active Ph.D. students in their research journeys.
+    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; margin: 20px 0;">
+      <a href="index.html" class="back-link">← Back to Main Page</a>
+      <button id="scrollTopBtn" style="display: symbol;" onclick="scrollToTop()"><span style="font-size: 1.5em;">&#129153;</button>
+    </div>
+    <footer>
+        <div class="container">
+            <p>© 2025 Dr. Jay Mahendrakumar Joshi</p>
+        </div>
+    </footer>
+    
+    <script>
+	const btn = document.getElementById("scrollTopBtn");
+	function scrollToTop(){
+		window.scrollTo({top: 0, behavior: 'smooth'})
+	}
+
+        function openTab(tabId) {
+            // Hide all tab contents
+            const tabContents = document.getElementsByClassName('tab-content');
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove('active');
+            }
+            
+            // Deactivate all tab buttons
+            const tabButtons = document.getElementsByClassName('tab-button');
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove('active');
+            }
+            
+            // Show the selected tab content and activate the button
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>

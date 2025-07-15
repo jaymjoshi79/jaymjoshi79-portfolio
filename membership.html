@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Memberships</title>
+    <style>
+        :root {
+            --primary-color: #0d47a1;
+            --secondary-color: #1976d2;
+            --accent-color: #42a5f5;
+            --light-color: #e3f2fd;
+            --dark-color: #0a2351;
+            --success-color: #00796b;
+            --text-color: #263238;
+            --background-color: #f5f7fa;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+            .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 10px 20px;
+      background-color: var(--secondary-color);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h1::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+        
+        .subtitle {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+        
+        .membership-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 20px;
+            position: relative;
+        }
+         .scrollTopBtn{
+	font-size: 18px;
+	border: none;
+	outline: none;
+	background-color: var(--secondary-color);
+	color: white;
+	cursor: pointer;
+	padding: 10px 20px;
+	border-radius: 5px;
+	transition: background-color 0.3s ease;
+	}
+    .scrollTopBtn:hover{
+	background-color: var(--accent-color);
+	transform: translateY(-2px);
+	box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+	}
+
+        .membership-type {
+            font-size: 0.9rem;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 12px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        
+        .card-header h2 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .organization {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        .card-body {
+            padding: 25px;
+        }
+        
+        .membership-id {
+            font-size: 1.1rem;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+        
+        .membership-id strong {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+        
+        .card-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .card-icon svg {
+            width: 28px;
+            height: 28px;
+            fill: white;
+        }
+        
+        .info-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .info-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .info-section p {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #7a8999;
+            font-size: 0.9rem;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+                margin: 20px auto;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .membership-cards {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1> Dr. Jay M. Joshi</h1>
+            <p class="subtitle">Professional Memberships: Affiliated Professional Bodies & Societies</p>
+        </header>
+        <div class="membership-cards">
+            <!-- ISTE Card -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="membership-type">Life Member</span>
+                    <h2>ISTE</h2>
+                    <p class="organization">Indian Society for Technical Education</p>
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="membership-id">Membership ID: <strong>LM 36429</strong></p>
+                    <p>The Indian Society for Technical Education (ISTE) is the leading national professional non-profit making Society for the Technical Education System in India.</p>
+                </div>
+            </div>
+            
+            <!-- IETE Card -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="membership-type">Fellow Member</span>
+                    <h2>IETE</h2>
+                    <p class="organization">Institute of Electronics and Telecommunication Engineers</p>
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M2 9.96v4.83L8.98 19h6.04l6.98-4.21V9.96L15.02 5H8.98L2 9.96zM11 11h2v2h-2v-2zm2-2h-2V7h2v2z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="membership-id">Membership ID: <strong>F-158524</strong></p>
+                    <p>The Institution of Electronics and Telecommunication Engineers (IETE) is India's leading recognized professional society devoted to the advancement of science and technology.</p>
+                </div>
+            </div>
+            
+            <!-- IEEE Card -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="membership-type">Student Member</span>
+                    <h2>IEEE</h2>
+                    <p class="organization">Institute of Electrical and Electronics Engineers</p>
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="membership-id">Membership ID: <strong>91138986</strong></p>
+                    <p>IEEE is the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <h2>Benefits of Professional Memberships</h2>
+            <p>Membership in these prestigious professional bodies offers numerous advantages, including access to technical resources, networking opportunities with industry professionals, and staying updated with the latest technological advancements.</p>
+            <p>These memberships demonstrate a commitment to professional growth and continuous learning in the fields of engineering, electronics, and technology.</p>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin: 20px 0;">
+      <a href="index.html" class="back-link">← Back to Main Page</a>
+      <button id="scrollTopBtn" style="display: symbol;" onclick="scrollToTop()"><span style="font-size: 1.5em;">&#129153;</button>
+    </div>
+        
+       <footer>
+      © 2025 Dr. Jay Mahendrakumar Joshi
+    </footer>
+  </div>
+<script>
+	const btn = document.getElementById("scrollTopBtn");
+	function scrollToTop(){
+		window.scrollTo({top: 0, behavior: 'smooth'})
+	}
+</script>
+</body>
+</html>
